@@ -10,13 +10,17 @@ NOTE: Include two full paragraphs describing your implementation approach by ans
 
 What does your implementation do? 
 
+This program computes system performance telemetry on the gateway device, including CPU utilization and memory utilization, and logs these metrics.
+
 How does your implementation work?
+
+GatewayDeviceApp starts a SystemPerformanceManager, which schedules and runs SystemCpuUtilTask and SystemMemUtilTask to runs CPU and memory monitoring tasks. Each task reads the current system usage and calculates a utilization percentage.
 
 ### Code Repository and Branch
 
 NOTE: Be sure to include the branch (e.g. https://github.com/programming-the-iot/python-components/tree/alpha001).
 
-URL: 
+URL:  https://github.com/Mooyeonkim628/TELE6530_Lab_GDA/tree/labmodule02
 
 ### UML Design Diagram(s)
 
@@ -24,6 +28,7 @@ NOTE: Include one or more UML designs representing your solution. It's expected 
 diagram you provide will look similar to, but not the same as, its counterpart in the
 book [Programming the IoT](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/).
 
+![GDA UML](./lab02_gda.drawio.png)
 
 ### Unit Tests Executed
 
@@ -31,9 +36,10 @@ NOTE: TA's will execute your unit tests. You only need to list each test case be
 (e.g. ConfigUtilTest, DataUtilTest, etc). Be sure to include all previous tests, too,
 since you need to ensure you haven't introduced regressions.
 
-- 
-- 
-- 
+- mvn test -Dtest=ConfigUtilDefaultTest
+- mvn test -Dtest=ConfigUtilCustomTest 
+- mvn test -Dtest=SystemCpuUtilTaskTest
+- mvn test -Dtest=SystemMemUtilTaskTes
 
 ### Integration Tests Executed
 
@@ -42,8 +48,7 @@ some exceptions (such as your cloud connectivity tests). In such cases, they'll 
 your code to ensure it's correct. As for the tests you execute, you only need to list each
 test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 
-- 
-- 
-- 
+- mvn test -Dtest=GatewayDeviceAppTest
+- mvn test -Dtest=SystemPerformanceManagerTest
 
 EOF.

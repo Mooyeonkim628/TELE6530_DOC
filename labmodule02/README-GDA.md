@@ -39,7 +39,7 @@ since you need to ensure you haven't introduced regressions.
 - mvn test -Dtest=ConfigUtilDefaultTest
 - mvn test -Dtest=ConfigUtilCustomTest 
 - mvn test -Dtest=SystemCpuUtilTaskTest
-- mvn test -Dtest=SystemMemUtilTaskTes
+- mvn test -Dtest=SystemMemUtilTaskTest
 
 ### Integration Tests Executed
 

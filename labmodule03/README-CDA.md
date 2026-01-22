@@ -16,7 +16,7 @@ How does your implementation work?
 
 NOTE: Be sure to include the branch (e.g. https://github.com/programming-the-iot/python-components/tree/alpha001).
 
-URL: 
+URL: https://github.com/Mooyeonkim628/TELE6530_Lab_CDA/tree/labmodule03
 
 ### UML Design Diagram(s)
 
@@ -24,6 +24,7 @@ NOTE: Include one or more UML designs representing your solution. It's expected 
 diagram you provide will look similar to, but not the same as, its counterpart in the
 book [Programming the IoT](https://learning.oreilly.com/library/view/programming-the-internet/9781492081401/).
 
+![CDA UML](./lab03_cda.drawio.png)
 
 ### Unit Tests Executed
 
@@ -31,9 +32,19 @@ NOTE: TA's will execute your unit tests. You only need to list each test case be
 (e.g. ConfigUtilTest, DataUtilTest, etc). Be sure to include all previous tests, too,
 since you need to ensure you haven't introduced regressions.
 
-- 
-- 
-- 
+-python -m unittest tests/unit/common/test_ConfigUtilDefault.py
+-python -m unittest tests/unit/common/test_ConfigUtilCustom.py
+-python -m unittest tests/unit/system/test_SystemCpuUtilTask.py
+-python -m unittest tests/unit/system/test_SystemMemUtilTask.py
+
+-python -m unittest tests/unit/data/test_ActuatorData.py
+-python -m unittest tests/unit/data/test_SensorData.py
+-python -m unittest tests/unit/data/test_SystemPerformanceData.py
+-python -m unittest tests/unit/sim/test_HumiditySensorSimTask.py
+-python -m unittest tests/unit/sim/test_PressureSensorSimTask.py
+-python -m unittest tests/unit/sim/test_TemperatureSensorSimTask.py
+-python -m unittest tests/unit/sim/test_HumidifierActuatorSimTask.py
+-python -m unittest tests/unit/sim/test_HvacActuatorSimTask.py
 
 ### Integration Tests Executed
 
@@ -42,8 +53,7 @@ some exceptions (such as your cloud connectivity tests). In such cases, they'll 
 your code to ensure it's correct. As for the tests you execute, you only need to list each
 test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 
-- 
-- 
-- 
+- python -m unittest tests/integration/app/test_DeviceDataManagerNoComms.py
+- python -m unittest tests/integration/app/test_ConstrainedDeviceApp.py
 
 EOF.

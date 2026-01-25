@@ -9,8 +9,10 @@ Be sure to implement all the PIOT-CDA-* issues (requirements) listed at [PIOT-IN
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
 What does your implementation do? 
+- This implementation simulates sensor data for temperature, pressure, and humidity. It generates telemetry values with predefined ranges and datasets, packages them into SensorData objects, and sends them through the CDA to demonstrate sensing and data flow without physical hardware.
 
 How does your implementation work?
+- The CDA initializes simulation tasks using the SensorDataGenerator to create datasets for each sensor. On each cycle, the next value from the dataset is retrieved and converted into a SensorData object. Also, the scheduler triggers this process, allowing the system to produce and handle simulated telemetry data.
 
 ### Code Repository and Branch
 

@@ -55,6 +55,8 @@ some exceptions (such as your cloud connectivity tests). In such cases, they'll 
 your code to ensure it's correct. As for the tests you execute, you only need to list each
 test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 
+- python -m unittest tests/integration/system/test_SensorAdapterManager.py
+- python -m unittest tests/integration/system/test_ActuatorAdapterManager.py
 - python -m unittest tests/integration/app/test_DeviceDataManagerNoComms.py
 - python -m unittest tests/integration/app/test_ConstrainedDeviceApp.py
 

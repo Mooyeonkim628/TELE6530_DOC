@@ -9,14 +9,16 @@ Be sure to implement all the PIOT-GDA-* issues (requirements) listed at [PIOT-IN
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
 What does your implementation do? 
+- This implementation collects system performance telemetry, wraps it in SystemPerformanceData, and forwards it. It also supports converting GDA data objects to and from JSON and store/publish via the persistence adapter.
 
 How does your implementation work?
+- The GDA periodically runs telemetry tasks to get utilization values, creates a SystemPerformanceData object and sets data. Then it sends the message to data message listener. For serialization and deserialization, it uses DataUtil to convert data as JSON, and the RedisPersistenceAdapter handles connecting to Redis and publishing or persisting the JSON payloads.
 
 ### Code Repository and Branch
 
 NOTE: Be sure to include the branch (e.g. https://github.com/programming-the-iot/python-components/tree/alpha001).
 
-URL: 
+URL: https://github.com/Mooyeonkim628/TELE6530_Lab_GDA/tree/labmodule05
 
 ### UML Design Diagram(s)
 

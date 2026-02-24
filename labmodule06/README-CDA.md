@@ -56,6 +56,6 @@ your code to ensure it's correct. As for the tests you execute, you only need to
 test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 
 - python -m unittest tests/integration/connection/test_MqttClientConnector.py 
-- python -m unittest tests/integration/connection/MqttClientControlPacketTest
+- python -m unittest tests/integration/connection/test_MqttClientControlPacket.py
 
 EOF.

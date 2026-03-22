@@ -63,7 +63,7 @@ test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 - python -m unittest tests/integration/app/test_DeviceDataManagerWithComms.py
 - python -m unittest tests/integration/app/test_DeviceDataManagerIntegration.py
 
-###Performance test result
+###MQTT Performance test result
 
 testConnectAndDisconnect (tests.integration.connection.test_MqttClientPerformance.MqttClientConnectorTest.testConnectAndDisconnect) ... 2026-03-20 11:19:44,583:ConfigUtil:INFO:Loading default config: ./config/PiotConfig.props
 2026-03-20 11:19:44,584:ConfigUtil:INFO:Path found. Attempting config file load: ./config/PiotConfig.props
@@ -125,5 +125,37 @@ OK
 
 - Fastest: qos 0
 - Slowest: qos 2
+
+###Coap Performance test result
+
+testPostRequestCon (tests.integration.connection.test_CoapClientPerformance.CoapClientPerformanceTest.testPostRequestCon)
+Comment the annotation to perf test CON POST ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 139.362s
+
+OK
+PROJECT_ROOT_PATH is set, using /home/mooki/piot/cda-python-components as cwd for execution payload
+Testing POST - CON
+
+POST message - useCON = True [10000]: 136458.263459 ms. Payload Len: 259
+disconnectClient() skipped due to thread exhaustion: cannot join thread before it is started
+
+
+testPostRequestNon (tests.integration.connection.test_CoapClientPerformance.CoapClientPerformanceTest.testPostRequestNon)
+Comment the annotation to perf test NON POST ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 126.124s
+
+OK
+PROJECT_ROOT_PATH is set, using /home/mooki/piot/cda-python-components as cwd for execution payload
+Testing POST - NON
+
+POST message - useCON = False [10000]: 124080.672932 ms. Payload Len: 259
+
+- Percentage difference (NON baseline): 9.98%
+- Fastest: NON (124080 ms)
+- Slowest: CON (136458 ms)
 
 EOF.

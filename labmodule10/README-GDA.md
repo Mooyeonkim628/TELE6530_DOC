@@ -58,7 +58,7 @@ test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 - mvn test -Dtest=CoapClientPerformanceTest
 - mvn test -Dtest=MqttClientConnectorTest
 
-### Performance Test Result
+### Performance Test Result (MQTT)
 
 INFO: \n\tTesting Publish: QoS = 0 | msgs = 10000 | payload size = 212 | start = 1.7740201E9 | end = 1.7740201E9 | elapsed = 2.2973
 Mar 20, 2026 11:21:03 AM programmingtheiot.integration.connection.MqttClientPerformanceTest execTestPublish
@@ -97,5 +97,118 @@ Finished at: 2026-03-20T11:21:10-04:00
 
 - Fastest: qos 0
 - Slowest: qos 2
+
+### Performance Test Result (Coap)
+CON Mode:
+--- resources:3.3.1:resources (default-resources) @ gateway-device-app ---
+Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+skip non existing resourceDirectory /home/mooki/piot/gda-java-components/src/main/resources
+
+--- compiler:3.13.0:compile (default-compile) @ gateway-device-app ---
+Nothing to compile - all classes are up to date.
+
+--- resources:3.3.1:testResources (default-testResources) @ gateway-device-app ---
+Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+skip non existing resourceDirectory /home/mooki/piot/gda-java-components/src/test/resources
+
+--- compiler:3.13.0:testCompile (default-testCompile) @ gateway-device-app ---
+Nothing to compile - all classes are up to date.
+
+--- surefire:3.0.0-M5:test (default-cli) @ gateway-device-app ---
+useSystemClassLoader setting has no effect when not forking
+The parameter forkCount should likely not be 0, not forking a JVM for tests reduce test accuracy, ensure to have a <forkCount> >= 1.
+Running programmingtheiot.integration.connection.CoapClientPerformanceTest
+[main] INFO org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+[main] INFO org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+[main] INFO org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+[main] INFO org.eclipse.californium.elements.config.Configuration - loading properties from file /home/mooki/piot/gda-java-components/Californium3.properties
+Mar 22, 2026 2:57:50 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Created client connection to server / resource: coap://localhost:5683
+Mar 22, 2026 2:57:50 PM programmingtheiot.gda.connection.CoapClientConnector <init>
+INFO: Using URL for server conn: coap://localhost:5683
+Mar 22, 2026 2:57:50 PM programmingtheiot.integration.connection.CoapClientPerformanceTest testPostRequestCon
+INFO: Testing POST - CON
+[main] INFO org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+[main] INFO org.eclipse.californium.ban - Started.
+[main] INFO org.eclipse.californium.core.network.CoapEndpoint - coap CoapEndpoint uses udp context
+[main] INFO org.eclipse.californium.core.network.stack.BlockwiseLayer - coap BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+[main] INFO org.eclipse.californium.core.network.CoapEndpoint - coap Endpoint [coap://0.0.0.0:0] requires an executor to start, using default single-threaded daemon executor
+[main] INFO org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+[main] INFO org.eclipse.californium.elements.UDPConnector - UDPConnector listening on /[0:0:0:0:0:0:0:0]:44070, recv buf = 106496, send buf = 106496, recv packet size = 2048
+[main] INFO org.eclipse.californium.core.network.CoapEndpoint - coap Started endpoint at coap://[0:0:0:0:0:0:0:0]:44070
+[main] INFO org.eclipse.californium.core.network.EndpointManager - created implicit endpoint coap://[0:0:0:0:0:0:0:0]:44070 for coap
+...
+INFO: Handling POST. Response: false - {} - 4.04 - 
+Mar 22, 2026 2:57:50 PM programmingtheiot.gda.connection.CoapClientConnector sendPostRequest
+INFO: Handling POST. Response: false - {} - 4.04 - 
+ sendPostRequest
+...
+INFO: Handling POST. Response: false - {} - 4.04 - 
+Mar 22, 2026 2:57:13 PM programmingtheiot.integration.connection.CoapClientPerformanceTest execTestPost
+INFO: POST message - useCON = true [10000]: 9009 ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.278 s - in programmingtheiot.integration.connection.CoapClientPerformanceTest
+
+Results:
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  10.491 s
+Finished at: 2026-03-22T14:57:13-04:00
+------------------------------------------------------------------------
+
+NON Mode:
+
+--- surefire:3.0.0-M5:test (default-cli) @ gateway-device-app ---
+useSystemClassLoader setting has no effect when not forking
+The parameter forkCount should likely not be 0, not forking a JVM for tests reduce test accuracy, ensure to have a <forkCount> >= 1.
+Running programmingtheiot.integration.connection.CoapClientPerformanceTest
+[main] INFO org.eclipse.californium.elements.config.Configuration - defaults added COAP.
+[main] INFO org.eclipse.californium.elements.config.Configuration - defaults added SYS.
+[main] INFO org.eclipse.californium.elements.config.Configuration - defaults added UDP.
+[main] INFO org.eclipse.californium.elements.config.Configuration - loading properties from file /home/mooki/piot/gda-java-components/Californium3.properties
+Mar 22, 2026 2:59:32 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Created client connection to server / resource: coap://localhost:5683
+Mar 22, 2026 2:59:32 PM programmingtheiot.gda.connection.CoapClientConnector <init>
+INFO: Using URL for server conn: coap://localhost:5683
+Mar 22, 2026 2:59:32 PM programmingtheiot.integration.connection.CoapClientPerformanceTest testPostRequestNon
+INFO: Testing POST - NON
+[main] INFO org.eclipse.californium.core.network.RandomTokenGenerator - using tokens of 8 bytes in length
+[main] INFO org.eclipse.californium.ban - Started.
+[main] INFO org.eclipse.californium.core.network.CoapEndpoint - coap CoapEndpoint uses udp context
+[main] INFO org.eclipse.californium.core.network.stack.BlockwiseLayer - coap BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+[main] INFO org.eclipse.californium.core.network.CoapEndpoint - coap Endpoint [coap://0.0.0.0:0] requires an executor to start, using default single-threaded daemon executor
+[main] INFO org.eclipse.californium.elements.UDPConnector - UDPConnector starts up 2 sender threads and 2 receiver threads
+[main] INFO org.eclipse.californium.elements.UDPConnector - UDPConnector listening on /[0:0:0:0:0:0:0:0]:52967, recv buf = 106496, send buf = 106496, recv packet size = 2048
+[main] INFO org.eclipse.californium.core.network.CoapEndpoint - coap Started endpoint at coap://[0:0:0:0:0:0:0:0]:52967
+[main] INFO org.eclipse.californium.core.network.EndpointManager - created implicit endpoint coap://[0:0:0:0:0:0:0:0]:52967 for coap
+Mar 22, 2026 2:59:32 PM programmingtheiot.gda.connection.CoapClientConnector sendPostRequest
+INFO: Handling POST. Response: false - {} - 4.04 - 
+Mar 22, 2026 2:59:32 PM programmingtheiot.gda.connection.CoapClientConnector sendPostRequest
+INFO: Handling POST. Response: false - {} - 4.04 - 
+Mar 22, 2026 2:59:32 PM programmingtheiot.gda.connection.CoapClientConnector sendPostRequest
+...
+
+programmingtheiot.integration.connection.CoapClientPerformanceTest execTestPost
+INFO: POST message - useCON = false [10000]: 8476 ms
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.758 s - in programmingtheiot.integration.connection.CoapClientPerformanceTest
+
+Results:
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  11.556 s
+Finished at: 2026-03-22T14:56:13-04:00
+------------------------------------------------------------------------
+
+- Percentage difference (NON baseline): 6.29%
+- Fastest: NON (8476 ms)
+- Slowest: CON (9009 ms)
+
 
 EOF.

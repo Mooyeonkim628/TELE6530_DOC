@@ -63,7 +63,7 @@ test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 - python -m unittest tests/integration/app/test_DeviceDataManagerWithComms.py
 - python -m unittest tests/integration/app/test_DeviceDataManagerIntegration.py
 
-###MQTT Performance test result
+### MQTT Performance test result
 
 testConnectAndDisconnect (tests.integration.connection.test_MqttClientPerformance.MqttClientConnectorTest.testConnectAndDisconnect) ... 2026-03-20 11:19:44,583:ConfigUtil:INFO:Loading default config: ./config/PiotConfig.props
 2026-03-20 11:19:44,584:ConfigUtil:INFO:Path found. Attempting config file load: ./config/PiotConfig.props
@@ -126,7 +126,7 @@ OK
 - Fastest: qos 0
 - Slowest: qos 2
 
-###Coap Performance test result
+### Coap Performance test result
 
 testPostRequestCon (tests.integration.connection.test_CoapClientPerformance.CoapClientPerformanceTest.testPostRequestCon)
 Comment the annotation to perf test CON POST ... ok

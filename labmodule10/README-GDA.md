@@ -81,16 +81,6 @@ Mar 20, 2026 11:21:10 AM programmingtheiot.integration.connection.MqttClientPerf
 INFO: Connect and Disconnect [1]: 229 ms
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.16 s - in programmingtheiot.integration.connection.MqttClientPerformanceTest
 
-Results:
-
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
-
-------------------------------------------------------------------------
-BUILD SUCCESS
-------------------------------------------------------------------------
-Total time:  14.389 s
-Finished at: 2026-03-20T11:21:10-04:00
-
 - qos 0: 2297.3 ms
 - qos 1: 3347.1 ms
 - qos 2: 6637.1 ms
@@ -152,13 +142,6 @@ Results:
 
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
-------------------------------------------------------------------------
-BUILD SUCCESS
-------------------------------------------------------------------------
-Total time:  10.491 s
-Finished at: 2026-03-22T14:57:13-04:00
-------------------------------------------------------------------------
-
 NON Mode:
 
 --- surefire:3.0.0-M5:test (default-cli) @ gateway-device-app ---
@@ -198,13 +181,6 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.758 s - in pro
 Results:
 
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-
-------------------------------------------------------------------------
-BUILD SUCCESS
-------------------------------------------------------------------------
-Total time:  11.556 s
-Finished at: 2026-03-22T14:56:13-04:00
-------------------------------------------------------------------------
 
 - Percentage difference (NON baseline): 6.29%
 - Fastest: NON (8476 ms)

@@ -57,6 +57,7 @@ test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 - mvn test -Dtest=MqttClientPerformanceTest
 - mvn test -Dtest=CoapClientPerformanceTest
 - mvn test -Dtest=MqttClientConnectorTest
+- mvn test -Dtest=DeviceDataManagerSimpleCdaActuationTest
 
 ### Performance Test Result (MQTT)
 

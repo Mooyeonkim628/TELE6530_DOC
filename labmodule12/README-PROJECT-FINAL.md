@@ -91,12 +91,13 @@ The GDA forwards sensor data upstream via MQTT and relaying cloud-initiated actu
 
 ### Screen Shots Representing Visualized Data
 
+![Diagram](./actuator_GDA.png)
+
+![Diagram](./actuator_CDA.png)
+
 NOTE: Include (at least) TWO (2) screen shots - one showing at least 1 hour
 of time-series data from the CDA, and one showing an event being triggered
 that results in an actuation event sent to your GDA and then to your CDA.
 
-![Diagram](./actuator_GDA.png)
-
-![Diagram](./actuator_CDA.png)
 
 EOF.
